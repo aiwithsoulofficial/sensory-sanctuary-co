@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensory Sanctuary Co - Instagram Reel Covers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      color: #C5A46B;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #888;
+      font-size: 0.85rem;
+      margin-bottom: 3rem;
+    }
+
+    .covers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .cover-wrapper {
+      text-align: center;
+    }
+
+    .cover-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Each cover is 1080x1350 ratio (4:5 Instagram) */
+    .cover {
+      width: 270px;
+      height: 337.5px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      margin: 0 auto;
+    }
+
+    /* ====== COVER 1: FOUNDER STORY ====== */
+    .cover-founder {
+      background: linear-gradient(180deg, #3A5A40 0%, #1D3A25 60%, #0F1F14 100%);
+    }
+
+    .cover-founder .cover-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+    }
+
+    .cover-founder .photo-area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      background: linear-gradient(180deg, rgba(197, 164, 107, 0.1) 0%, rgba(58, 90, 64, 0.3) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-founder .photo-area span {
+      font-size: 0.6rem;
+      color: rgba(245, 240, 232, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .cover-eyebrow {
+      font-size: 0.45rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #C5A46B;
+      margin-bottom: 0.4rem;
+    }
+
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: #F5F0E8;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    .cover-sub {
+      font-size: 0.5rem;
+      color: rgba(245, 240, 232, 0.6);
+      line-height: 1.4;
+    }
+
+    /* ====== COVER 2: HOW IT WORKS ====== */
+    .cover-how {
+      background: #F5F0E8;
+    }
+
+    .cover-how .cover-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cover-how .ring-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #3A5A40;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+
+    .cover-how .ring-circle img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+
+    .cover-how .cover-eyebrow { color: #8B9D83; }
+
+    .cover-how .cover-title {
+      color: #3A5A40;
+      font-size: 1rem;
+    }
+
+    .cover-how .cover-sub { color: #5A5A5A; }
+
+    /* ====== COVER 3: WHO IT'S FOR ====== */
+    .cover-who {
+      background: linear-gradient(135deg, #2A2A2A 0%, #1a1a1a 100%);
+      border: 1px solid rgba(197, 164, 107, 0.3);
+    }
+
+    .cover-who .cover-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cover-who .tag-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+
+    .cover-who .tag {
+      font-size: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid rgba(197, 164, 107, 0.4);
+      color: #C5A46B;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ====== COVER 4: THE SCIENCE ====== */
+    .cover-science {
+      background: #3A5A40;
+    }
+
+    .cover-science .cover-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .cover-science .science-icon {
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(197, 164, 107, 0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    /* ====== COVER 5: CUSTOMER STORY ====== */
+    .cover-customer {
+      background: linear-gradient(180deg, #F5F0E8 0%, #E8E2D8 100%);
+    }
+
+    .cover-customer .cover-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cover-customer .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: #C5A46B;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .cover-customer .cover-title { color: #3A5A40; font-size: 0.95rem; }
+    .cover-customer .cover-eyebrow { color: #8B9D83; }
+    .cover-customer .cover-sub { color: #5A5A5A; }
+
+    /* ====== COVER 6: PRODUCT DROP ====== */
+    .cover-product {
+      background: linear-gradient(180deg, #0F1F14 0%, #1D3A25 50%, #3A5A40 100%);
+    }
+
+    .cover-product .cover-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .cover-product .product-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(245, 240, 232, 0.08);
+      border: 1px solid rgba(197, 164, 107, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .cover-product .product-circle img {
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+    }
+
+    /* ====== COVER 7: OT EXPLAINS ====== */
+    .cover-ot {
+      background: #F5F0E8;
+      border: 1px solid #DAD7CD;
+    }
+
+    .cover-ot .cover-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+    }
+
+    .cover-ot .ot-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.45rem;
+      padding: 0.3rem 0.6rem;
+      background: #3A5A40;
+      color: #F5F0E8;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .cover-ot .photo-area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background: linear-gradient(180deg, #DAD7CD 0%, #E8E2D8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-ot .photo-area span {
+      font-size: 0.6rem;
+      color: #8B9D83;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .cover-ot .cover-title { color: #3A5A40; font-size: 0.95rem; }
+    .cover-ot .cover-eyebrow { color: #8B9D83; }
+    .cover-ot .cover-sub { color: #5A5A5A; }
+
+    /* ====== COVER 8: REGULATION TIP ====== */
+    .cover-tip {
+      background: linear-gradient(135deg, #3A5A40 0%, #588157 100%);
+    }
+
+    .cover-tip .cover-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cover-tip .tip-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--gold, #C5A46B);
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+
+    /* Brand watermark on all covers */
+    .cover::after {
+      content: 'SENSORY SANCTUARY CO';
+      position: absolute;
+      bottom: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.35rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      white-space: nowrap;
+    }
+
+    .cover-founder::after,
+    .cover-who::after,
+    .cover-science::after,
+    .cover-product::after,
+    .cover-tip::after {
+      color: #F5F0E8;
+    }
+
+    .cover-how::after,
+    .cover-customer::after,
+    .cover-ot::after {
+      color: #3A5A40;
+    }
+
+    /* ====== NOTES SECTION ====== */
+    .notes {
+      max-width: 1400px;
+      margin: 3rem auto 0;
+      padding: 2rem;
+      background: #222;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+
+    .notes h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: #C5A46B;
+      margin-bottom: 1rem;
+    }
+
+    .notes p, .notes li {
+      font-size: 0.85rem;
+      color: #999;
+      line-height: 1.6;
+    }
+
+    .notes ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+
+    .notes strong { color: #ddd; }
+
+    @media print {
+      body { background: white; }
+      .notes { display: none; }
+      .covers-grid { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Instagram Reel Cover Templates</h1>
+  <p class="subtitle">Sensory Sanctuary Co - 8 branded cover categories for visual consistency across reels</p>
+
+  <div class="covers-grid">
+
+    <!-- 1. FOUNDER STORY -->
+    <div class="cover-wrapper">
+      <div class="cover-label">01 / Founder Story</div>
+      <div class="cover cover-founder">
+        <div class="photo-area">
+          <span>Rachel's photo here</span>
+        </div>
+        <div class="cover-inner">
+          <div class="cover-eyebrow">Founder Story</div>
+          <div class="cover-title">Why I built this as a model with anxiety</div>
+          <div class="cover-sub">The ring nobody knows about</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. HOW IT WORKS -->
+    <div class="cover-wrapper">
+      <div class="cover-label">02 / How It Works</div>
+      <div class="cover cover-how">
+        <div class="cover-inner">
+          <div class="ring-circle">
+            <img src="https://sensorysanctuaryco.com.au/cdn/shop/files/3.png?v=1774351353&width=400" alt="Ring">
+          </div>
+          <div class="cover-eyebrow">How It Works</div>
+          <div class="cover-title">What happens when you spin this ring</div>
+          <div class="cover-sub">The OT science behind the design</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. WHO IT'S FOR -->
+    <div class="cover-wrapper">
+      <div class="cover-label">03 / Who It's For</div>
+      <div class="cover cover-who">
+        <div class="cover-inner">
+          <div class="cover-eyebrow" style="color: #C5A46B;">This is for you if...</div>
+          <div class="tag-grid">
+            <span class="tag">Anxiety</span>
+            <span class="tag">ADHD</span>
+            <span class="tag">Overwhelm</span>
+            <span class="tag">Sensory</span>
+            <span class="tag">Burnout</span>
+            <span class="tag">Skin picking</span>
+          </div>
+          <div class="cover-title" style="color: #F5F0E8; font-size: 0.85rem;">You're not broken.<br>You're overstimulated.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. THE SCIENCE -->
+    <div class="cover-wrapper">
+      <div class="cover-label">04 / The Science</div>
+      <div class="cover cover-science">
+        <div class="cover-inner">
+          <div class="science-icon">&#9651;</div>
+          <div class="cover-eyebrow" style="color: #C5A46B;">The Science</div>
+          <div class="cover-title" style="font-size: 0.95rem;">Why your nervous system needs tactile input</div>
+          <div class="cover-sub" style="color: rgba(245,240,232,0.5); margin-top: 0.5rem;">Explained by an OT</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. CUSTOMER STORY -->
+    <div class="cover-wrapper">
+      <div class="cover-label">05 / Customer Story</div>
+      <div class="cover cover-customer">
+        <div class="cover-inner">
+          <div class="quote-mark">"</div>
+          <div class="cover-eyebrow">Real Story</div>
+          <div class="cover-title">I wear it to every meeting and nobody knows</div>
+          <div class="cover-sub" style="margin-top: 0.5rem;">Customer testimonials</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. PRODUCT DROP -->
+    <div class="cover-wrapper">
+      <div class="cover-label">06 / Product Feature</div>
+      <div class="cover cover-product">
+        <div class="cover-inner">
+          <div class="product-circle">
+            <img src="https://sensorysanctuaryco.com.au/cdn/shop/files/Untitleddesign_6_3cf1af2a-0287-4001-81c4-6d5601372d22.png?v=1777804098&width=400" alt="Dawn Ring">
+          </div>
+          <div class="cover-eyebrow" style="color: #C5A46B;">New Drop</div>
+          <div class="cover-title" style="font-size: 1rem;">The Dawn Ring</div>
+          <div class="cover-sub" style="color: rgba(245,240,232,0.5);">Celestial spinner for renewal</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. OT EXPLAINS -->
+    <div class="cover-wrapper">
+      <div class="cover-label">07 / OT Explains</div>
+      <div class="cover cover-ot">
+        <div class="ot-badge">Occupational Therapist</div>
+        <div class="photo-area">
+          <span>Caitlin's photo here</span>
+        </div>
+        <div class="cover-inner">
+          <div class="cover-eyebrow">OT Explains</div>
+          <div class="cover-title">Why fidgeting actually helps you focus</div>
+          <div class="cover-sub">Clinical insights made simple</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. REGULATION TIP -->
+    <div class="cover-wrapper">
+      <div class="cover-label">08 / Regulation Tip</div>
+      <div class="cover cover-tip">
+        <div class="cover-inner">
+          <div class="tip-number">#1</div>
+          <div class="cover-eyebrow" style="color: #C5A46B;">Regulation Tip</div>
+          <div class="cover-title" style="font-size: 0.9rem;">The 3-second spin that resets your nervous system</div>
+          <div class="cover-sub" style="color: rgba(245,240,232,0.5); margin-top: 0.5rem;">Quick wins for overwhelm</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NOTES -->
+  <div class="notes">
+    <h2>Usage Notes</h2>
+    <ul>
+      <li><strong>Size:</strong> These are at Instagram's 4:5 ratio (1080 x 1350px). Screenshot each at 2x for crisp quality, or recreate in Canva/Figma at full resolution.</li>
+      <li><strong>Rachel's photos:</strong> Covers 01 (Founder Story) and any lifestyle content should feature Rachel wearing the rings. Natural light, candid energy - not stock-photo posed.</li>
+      <li><strong>Caitlin's photos:</strong> Cover 07 (OT Explains) features Caitlin. Professional but warm - the credibility anchor.</li>
+      <li><strong>Consistency:</strong> Every reel gets a cover from one of these 8 categories. When someone lands on the grid, they instantly see a brand - not random content.</li>
+      <li><strong>Content pillars:</strong> These 8 covers map to 8 content pillars. Rotate through them for a balanced grid.</li>
+    </ul>
+
+    <h2>Content Pillar Strategy</h2>
+    <ul>
+      <li><strong>01 Founder Story:</strong> Rachel's anxiety journey, behind the scenes, day in my life, the moment that started it all</li>
+      <li><strong>02 How It Works:</strong> Close-up of the ring spinning, ASMR sounds, unboxing, showing the mechanism</li>
+      <li><strong>03 Who It's For:</strong> "This ring is for the woman who..." hooks, relatable scenarios, "POV" content</li>
+      <li><strong>04 The Science:</strong> Nervous system education, sensory processing explained, why tactile input works</li>
+      <li><strong>05 Customer Story:</strong> Testimonials, DM screenshots (with permission), before/after stories</li>
+      <li><strong>06 Product Feature:</strong> New drops, restocks, ring comparisons, "which ring matches your vibe"</li>
+      <li><strong>07 OT Explains:</strong> Caitlin's clinical knowledge made accessible, myth-busting, Q&A</li>
+      <li><strong>08 Regulation Tip:</strong> Quick actionable tips, sensory hacks, "try this when..." content</li>
+    </ul>
+
+    <h2>Brand Colours Reference</h2>
+    <ul>
+      <li><strong>Deep Sage:</strong> #3A5A40</li>
+      <li><strong>Mid Sage:</strong> #588157</li>
+      <li><strong>Gold:</strong> #C5A46B</li>
+      <li><strong>Cream:</strong> #F5F0E8</li>
+      <li><strong>Charcoal:</strong> #2A2A2A</li>
+      <li><strong>Sand:</strong> #E8E2D8</li>
+    </ul>
+  </div>
+
+</body>
+</html>

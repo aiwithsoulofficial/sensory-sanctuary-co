@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensory Sanctuary Co - Marketing Strategy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Italiana&family=Outfit:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --sage: #3A5A40; --sage-mid: #588157; --sage-light: #8B9D83;
+      --gold: #C5A46B; --gold-light: #D4BC8A; --cream: #F5F0E8;
+      --cream-warm: #FAF6F0; --charcoal: #2A2A2A; --text: #444; --white: #FFFFFF;
+    }
+    html { font-size: 15px; }
+    body { font-family: 'Outfit', sans-serif; color: var(--charcoal); background: var(--cream-warm); line-height: 1.7; }
+    h1, h2, h3 { font-family: 'Italiana', serif; font-weight: 400; line-height: 1.2; }
+    .script { font-family: 'Pinyon Script', cursive; }
+    .serif { font-family: 'Libre Baskerville', serif; }
+
+    .cover {
+      min-height: 100vh; background: linear-gradient(135deg, var(--charcoal) 0%, #1a1a1a 100%);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 4rem 2rem; position: relative;
+    }
+    .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%, rgba(197,164,107,0.1) 0%, transparent 60%); }
+    .cover * { position: relative; z-index: 1; }
+    .cover h1 { font-size: 3rem; color: var(--cream); margin-bottom: 0.5rem; }
+    .cover h1 em { font-family: 'Pinyon Script', cursive; color: var(--gold-light); font-style: normal; }
+
+    .page { max-width: 1000px; margin: 0 auto; padding: 5rem 3rem; }
+    .page-full { max-width: 100%; padding: 5rem; }
+    .page-dark { background: var(--sage); color: var(--cream); }
+    .page-charcoal { background: var(--charcoal); color: var(--cream); }
+    .inner { max-width: 1000px; margin: 0 auto; }
+
+    .section-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .page h2 { font-size: 2.2rem; margin-bottom: 1.5rem; }
+    .page h3 { font-size: 1.3rem; margin-bottom: 0.75rem; margin-top: 2.5rem; }
+    .page p { font-size: 0.95rem; color: var(--text); margin-bottom: 1rem; max-width: 750px; }
+    .page-dark p, .page-charcoal p { color: rgba(245,240,232,0.8); }
+    .page-dark h2, .page-charcoal h2 { color: var(--cream); }
+
+    .highlight { background: var(--white); border-left: 3px solid var(--gold); padding: 1.5rem 2rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+    .page-dark .highlight, .page-charcoal .highlight { background: rgba(0,0,0,0.2); }
+    .highlight p { margin: 0; }
+    .highlight strong { color: var(--sage); }
+    .page-dark .highlight strong, .page-charcoal .highlight strong { color: var(--gold); }
+
+    table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.85rem; }
+    th { text-align: left; padding: 0.75rem 1rem; background: var(--sage); color: var(--cream); font-weight: 500; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    td { padding: 0.75rem 1rem; border-bottom: 1px solid #E8E2D8; color: var(--text); }
+    tr:nth-child(even) td { background: var(--cream-warm); }
+    .page-dark th, .page-charcoal th { background: rgba(0,0,0,0.3); }
+    .page-dark td, .page-charcoal td { border-bottom-color: rgba(245,240,232,0.1); color: rgba(245,240,232,0.8); }
+    .page-dark tr:nth-child(even) td, .page-charcoal tr:nth-child(even) td { background: rgba(0,0,0,0.1); }
+
+    .phase-card { background: var(--white); border-radius: 6px; padding: 2rem; margin: 1.5rem 0; border-top: 3px solid var(--gold); }
+    .page-dark .phase-card, .page-charcoal .phase-card { background: rgba(0,0,0,0.2); }
+    .phase-card h4 { font-family: 'Italiana', serif; font-size: 1.2rem; color: var(--sage); margin-bottom: 0.75rem; }
+    .page-dark .phase-card h4, .page-charcoal .phase-card h4 { color: var(--gold-light); }
+
+    ul.check { list-style: none; padding: 0; }
+    ul.check li { padding: 0.5rem 0 0.5rem 1.5rem; position: relative; font-size: 0.9rem; border-bottom: 1px solid rgba(0,0,0,0.04); }
+    ul.check li::before { content: '\\2713'; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+    .page-dark ul.check li, .page-charcoal ul.check li { border-bottom-color: rgba(245,240,232,0.06); }
+
+    .funnel { display: flex; flex-direction: column; gap: 0; margin: 2rem 0; }
+    .funnel-step { padding: 1.5rem 2rem; position: relative; }
+    .funnel-step:nth-child(1) { background: var(--sage); color: var(--cream); border-radius: 6px 6px 0 0; }
+    .funnel-step:nth-child(2) { background: var(--sage-mid); color: var(--cream); }
+    .funnel-step:nth-child(3) { background: var(--sage-light); color: var(--white); }
+    .funnel-step:nth-child(4) { background: var(--gold); color: var(--charcoal); }
+    .funnel-step:nth-child(5) { background: var(--charcoal); color: var(--cream); border-radius: 0 0 6px 6px; }
+    .funnel-step h4 { font-family: 'Italiana', serif; font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .funnel-step p { font-size: 0.8rem; opacity: 0.85; margin: 0; max-width: 100%; }
+
+    .timeline { position: relative; padding-left: 2rem; margin: 2rem 0; }
+    .timeline::before { content: ''; position: absolute; left: 0.5rem; top: 0; bottom: 0; width: 2px; background: var(--gold); }
+    .timeline-item { position: relative; margin-bottom: 2rem; }
+    .timeline-item::before { content: ''; position: absolute; left: -1.65rem; top: 0.4rem; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+    .timeline-item h4 { font-family: 'Italiana', serif; font-size: 1rem; color: var(--sage); margin-bottom: 0.3rem; }
+    .page-dark .timeline-item h4, .page-charcoal .timeline-item h4 { color: var(--gold-light); }
+    .timeline-item p { font-size: 0.85rem; margin: 0; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 1.5rem 0; }
+
+    .stat-card { text-align: center; padding: 1.5rem; background: var(--white); border-radius: 6px; }
+    .page-dark .stat-card, .page-charcoal .stat-card { background: rgba(0,0,0,0.2); }
+    .stat-num { font-family: 'Italiana', serif; font-size: 2.5rem; color: var(--sage); }
+    .page-dark .stat-num, .page-charcoal .stat-num { color: var(--gold); }
+    .stat-label { font-size: 0.7rem; color: var(--sage-light); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    @media (max-width: 768px) {
+      .page { padding: 3rem 1.5rem; }
+      .page-full { padding: 3rem 1.5rem; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== COVER ====== -->
+  <div class="cover">
+    <div class="section-label" style="color: var(--gold); margin-bottom: 2rem;">Sensory Sanctuary Co</div>
+    <h1>The <em>Drop Model</em> Marketing Strategy</h1>
+    <p style="color: rgba(245,240,232,0.5); font-size: 0.85rem; margin-top: 2rem;">Organic + Paid + Drop Strategy + Funnel Architecture</p>
+    <p style="color: rgba(245,240,232,0.3); font-size: 0.75rem; margin-top: 1rem;">May 2026 - Kelly Wotherspoon, AI with Soul</p>
+  </div>
+
+  <!-- ====== THE BIG PICTURE ====== -->
+  <div class="page">
+    <div class="section-label">01 / The Big Picture</div>
+    <h2>Why Rachel needs to be seen</h2>
+
+    <p>
+      Rachel's face is nowhere on the brand. Her story isn't told. Her anxiety isn't mentioned. And the algorithm has no idea what Sensory Sanctuary Co is because it's been fed content from a converted personal account to an audience that followed a different person.
+    </p>
+
+    <p>
+      Here's the data from the competitor research: every brand in this space that has a founder face has grown. Every brand without one has stalled - regardless of product quality.
+    </p>
+
+    <div class="grid-3">
+      <div class="stat-card">
+        <div class="stat-num">124K</div>
+        <div class="stat-label">Worry Rings (founder-led)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">56K</div>
+        <div class="stat-label">CONQUERing (mother-son story)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">151</div>
+        <div class="stat-label">Stimm (no founder face)</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <p><strong>Rachel doesn't need to become an influencer.</strong> She needs to be the face people trust. That's different. She can show up in 30-second reels wearing the ring at a cafe, in a meeting, at the beach. She can share one sentence about her anxiety over a product close-up. She doesn't need to dance, do trends, or bare her soul on camera. She just needs to be visible and real. A model with anxiety selling OT-designed jewellery - that's a story that tells itself. She barely needs to say a word.</p>
+    </div>
+
+    <h3>The strategy in one sentence</h3>
+    <div style="padding: 2rem; background: var(--sage); border-radius: 6px; text-align: center; margin: 1.5rem 0;">
+      <p style="font-family: 'Pinyon Script', cursive; font-size: 2rem; color: var(--gold-light); max-width: 100%; margin: 0;">Build the audience. Sell the knowledge. Drop the jewellery.</p>
+    </div>
+  </div>
+
+  <!-- ====== THE DROP MODEL ====== -->
+  <div class="page-full page-charcoal">
+    <div class="inner">
+      <div class="section-label">02 / The Drop Model</div>
+      <h2>Exclusive drops - how premium brands build demand</h2>
+
+      <p>
+        Instead of "everything always available" Shopify store energy, Sensory Sanctuary Co moves to a drop model. Limited collections. Announced dates. Waitlist signups. Sold-out energy. This does three things at once: builds the email list, creates urgency, and positions the brand as premium.
+      </p>
+
+      <h3>How it works</h3>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4 style="color: var(--gold-light);">Week 1-2: Tease</h4>
+          <p style="color: rgba(245,240,232,0.7);">Behind-the-scenes content. Rachel designing, choosing materials, testing the spin mechanism. Caitlin explaining the OT science behind the new piece. "Something's coming" energy. No product shots yet - just process and story.</p>
+        </div>
+        <div class="timeline-item">
+          <h4 style="color: var(--gold-light);">Week 3: Reveal</h4>
+          <p style="color: rgba(245,240,232,0.7);">Product reveal. Beautiful photography, close-up video, Rachel wearing it. Announce the drop date. Open the waitlist. "Join the waitlist to shop first" - this is the email capture moment.</p>
+        </div>
+        <div class="timeline-item">
+          <h4 style="color: var(--gold-light);">Week 4: Warm the list</h4>
+          <p style="color: rgba(245,240,232,0.7);">Email the waitlist with exclusive content - the story behind the ring name, the OT science, how to choose your size. Sell the digital products to the list while they wait. "While you wait for the drop, here's our Nervous System Regulation at Work guide - $0 for waitlist members."</p>
+        </div>
+        <div class="timeline-item">
+          <h4 style="color: var(--gold-light);">Drop Day</h4>
+          <p style="color: rgba(245,240,232,0.7);">Waitlist gets 24-hour early access. Then open to public. Countdown on socials. Rachel goes live wearing the ring. Limited stock messaging (if genuine). "3 hours in and the Dawn Ring is 60% gone."</p>
+        </div>
+        <div class="timeline-item">
+          <h4 style="color: var(--gold-light);">Post-drop</h4>
+          <p style="color: rgba(245,240,232,0.7);">Customer unboxing content. "First impressions" stories. "Sold out" badge on the website. Review collection emails. Start teasing the next drop. The cycle continues.</p>
+        </div>
+      </div>
+
+      <h3>Drop calendar (proposed Year 1)</h3>
+      <table>
+        <tr>
+          <th>Drop</th>
+          <th>Collection</th>
+          <th>Theme</th>
+          <th>Goal</th>
+        </tr>
+        <tr>
+          <td>Drop 1</td>
+          <td>Relaunch - core collection</td>
+          <td>"The Original Six" - reintroduce existing rings with new positioning</td>
+          <td>Establish the drop model, build initial waitlist</td>
+        </tr>
+        <tr>
+          <td>Drop 2</td>
+          <td>Celestial collection</td>
+          <td>Dawn + Dusk + new piece</td>
+          <td>Grow the list, introduce the "pair" concept</td>
+        </tr>
+        <tr>
+          <td>Drop 3</td>
+          <td>Men's drop</td>
+          <td>Emery, Arian, Kael - "Regulation isn't gendered"</td>
+          <td>Expand audience, Father's Day gifting angle</td>
+        </tr>
+        <tr>
+          <td>Drop 4</td>
+          <td>Holiday collection</td>
+          <td>Gift sets, bundles, limited edition finishes</td>
+          <td>Peak revenue, gifting audience, maximum list growth</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ====== THE FUNNEL ====== -->
+  <div class="page">
+    <div class="section-label">03 / The Funnel</div>
+    <h2>List first. Digital second. Jewellery third.</h2>
+
+    <p>
+      The digital products are the secret weapon. They're low cost, high value, instant delivery, and they establish the OT credibility before anyone buys a ring. The funnel moves people from curious to educated to customer.
+    </p>
+
+    <div class="funnel">
+      <div class="funnel-step">
+        <h4>Discovery</h4>
+        <p>TikTok / Instagram / Google search. Rachel's face, relatable hooks, OT education content. "The ring I spin under the table when my anxiety spikes."</p>
+      </div>
+      <div class="funnel-step">
+        <h4>Capture</h4>
+        <p>"Join the next drop waitlist" or "Download our free Sensory Profile quiz." Email capture. They're on the list now.</p>
+      </div>
+      <div class="funnel-step">
+        <h4>Nurture with digital products</h4>
+        <p>Welcome sequence sells the $0-15 digital products first. Nervous System Reset Ritual, Co-Regulation Guide, Workplace Regulation Guide. They experience the OT expertise before they buy jewellery.</p>
+      </div>
+      <div class="funnel-step">
+        <h4>The Drop</h4>
+        <p>Waitlist gets early access to the ring drop. They already trust the brand, they've used the digital tools, they've been warmed through the sequence. Conversion is significantly higher.</p>
+      </div>
+      <div class="funnel-step">
+        <h4>Community & repeat</h4>
+        <p>Post-purchase: review request, styling content, "wear it with" suggestions, referral program, next drop tease. Turn buyers into advocates.</p>
+      </div>
+    </div>
+
+    <h3>Email sequence architecture</h3>
+    <table>
+      <tr><th>Email</th><th>Timing</th><th>Content</th><th>Goal</th></tr>
+      <tr><td>Welcome</td><td>Immediate</td><td>Rachel's story. "I'm a model with anxiety. This is why I built this." + free digital download</td><td>Connection + deliver lead magnet</td></tr>
+      <tr><td>Education 1</td><td>Day 2</td><td>"Why fidgeting isn't a bad habit - it's your nervous system asking for help." OT perspective from Caitlin.</td><td>Establish clinical authority</td></tr>
+      <tr><td>Digital product</td><td>Day 4</td><td>"Our Nervous System Reset Ritual is on us this week." Free or discounted digital product.</td><td>Get them using an SSC product</td></tr>
+      <tr><td>Social proof</td><td>Day 6</td><td>Customer stories. "I wear mine to every meeting." Real quotes, real use cases.</td><td>Build trust through others</td></tr>
+      <tr><td>Product education</td><td>Day 8</td><td>"How to choose your ring: spinners vs. interlocking vs. rotating." Guide with photos.</td><td>Move from interest to intent</td></tr>
+      <tr><td>Drop announcement</td><td>Day 10+</td><td>"The next drop is [DATE]. You're on the early access list." Countdown.</td><td>Convert to purchase</td></tr>
+    </table>
+  </div>
+
+  <!-- ====== ORGANIC SOCIAL ====== -->
+  <div class="page-full page-dark">
+    <div class="inner">
+      <div class="section-label">04 / Organic Social Strategy</div>
+      <h2>TikTok-first, Instagram-second</h2>
+
+      <p>
+        Worry Rings built a multi-seven-figure business through TikTok (62.8K followers, 1.9M likes). #anxietyring has 30M+ views. This is where the buyers are. Instagram is the storefront. TikTok is the growth engine.
+      </p>
+
+      <h3>Platform strategy</h3>
+      <div class="grid-2">
+        <div class="phase-card">
+          <h4 style="color: var(--gold-light);">TikTok - Growth engine</h4>
+          <ul class="check">
+            <li>3-5 posts per week minimum</li>
+            <li>Raw, authentic, not over-produced</li>
+            <li>Rachel to camera - short, relatable, real</li>
+            <li>Hook in first 1.5 seconds or die</li>
+            <li>ASMR ring spinning content (huge on TikTok)</li>
+            <li>"POV" and "This ring is for the woman who..." hooks</li>
+            <li>Duet/stitch anxiety and ADHD creators</li>
+            <li>TikTok Shop integration when ready</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <h4 style="color: var(--gold-light);">Instagram - Brand home</h4>
+          <ul class="check">
+            <li>Fresh brand account (@sensorysanctuaryco)</li>
+            <li>Curated grid with branded reel covers</li>
+            <li>3-4 posts per week</li>
+            <li>Stories daily (polls, Q&A, behind the scenes)</li>
+            <li>Reels repurposed from best TikToks</li>
+            <li>Highlights: About, Rings, Science, Reviews, Drops</li>
+            <li>Link in bio to waitlist/shop (Linktree or custom)</li>
+            <li>Rachel's personal account tags brand in stories</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Content that works in this niche</h3>
+      <table>
+        <tr><th style="background:rgba(0,0,0,0.3);">Hook format</th><th style="background:rgba(0,0,0,0.3);">Example</th><th style="background:rgba(0,0,0,0.3);">Why it works</th></tr>
+        <tr><td>POV</td><td>"POV: you have anxiety and you just found the prettiest regulation tool that exists"</td><td>Relatable, aspirational, shows the product</td></tr>
+        <tr><td>This ring is for...</td><td>"This ring is for the woman who looks fine but is overstimulated as f*ck"</td><td>Direct targeting, emotional resonance</td></tr>
+        <tr><td>Things I wish I knew</td><td>"Things I wish I knew as a model with anxiety - your hands are trying to tell you something"</td><td>Rachel's authority + vulnerability</td></tr>
+        <tr><td>OT explains</td><td>"As an OT, here's why fidgeting is actually your nervous system being smart"</td><td>Caitlin's clinical credibility, educational</td></tr>
+        <tr><td>ASMR / satisfying</td><td>Close-up of the ring spinning, no talking, soft sounds</td><td>Algorithm loves ASMR, shows product in action</td></tr>
+        <tr><td>Get ready with me</td><td>Rachel doing her makeup, choosing which ring to wear, casual chat about her day</td><td>Lifestyle integration, face of brand</td></tr>
+        <tr><td>Before/after</td><td>"Before I found my ring" (stressed) vs "after" (calm, confident, spinning)</td><td>Transformation narrative</td></tr>
+        <tr><td>The drop countdown</td><td>"3 days until the Celestial Collection drops. Here's what's coming."</td><td>Urgency, exclusivity, FOMO</td></tr>
+      </table>
+
+      <h3>Rachel's minimum commitment</h3>
+      <div class="highlight">
+        <p><strong>She doesn't need to become a content creator.</strong> Here's the minimum that moves the needle:</p>
+        <p style="margin-top: 0.5rem;">- 2x per week: 30-second reel of her wearing the ring in a real setting (cafe, desk, driving). Can be filmed on her phone in natural light.</p>
+        <p>- 1x per week: Rachel to camera, one sentence about anxiety or the ring. "This is the ring I reach for when..." (15 seconds max).</p>
+        <p>- Daily stories: Quick, casual. A hand shot, a behind-the-scenes snap, a repost of a customer DM.</p>
+        <p>- Drop weeks: She goes harder. Behind the scenes, countdowns, live Q&A during the drop.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== PAID STRATEGY ====== -->
+  <div class="page">
+    <div class="section-label">05 / Paid Strategy</div>
+    <h2>Meta + TikTok Ads</h2>
+
+    <p>
+      Paid comes AFTER the organic foundation is set. No point running ads to a dead Instagram grid and a website with no positioning. Once the rebrand is live and there's 30+ pieces of quality content, paid amplifies what's already working.
+    </p>
+
+    <h3>Phase 1: List building ($15-25/day)</h3>
+    <div class="phase-card">
+      <h4>Objective: Waitlist signups</h4>
+      <ul class="check">
+        <li><strong>Platform:</strong> Meta (Facebook + Instagram) - broader targeting, lower CPL for list building</li>
+        <li><strong>Ad format:</strong> Video - Rachel wearing the ring, 15-30 seconds, direct-to-camera or voiceover</li>
+        <li><strong>Hook:</strong> "I'm a model. Nobody knows I have anxiety. This ring is how I get through it."</li>
+        <li><strong>CTA:</strong> "Join the waitlist for our next drop" - leads to email capture landing page</li>
+        <li><strong>Targeting:</strong> Women 22-45, interests: anxiety, ADHD, neurodivergent, occupational therapy, fidget toys, sensory processing, mental health awareness</li>
+        <li><strong>Lookalike:</strong> Build from email list + website visitors once there's 100+ on the list</li>
+        <li><strong>Expected CPL:</strong> $1.50-3.00 AUD for waitlist signup</li>
+      </ul>
+    </div>
+
+    <h3>Phase 2: Digital product sales ($20-30/day)</h3>
+    <div class="phase-card">
+      <h4>Objective: First purchase + pixel training</h4>
+      <ul class="check">
+        <li><strong>Platform:</strong> Meta + TikTok</li>
+        <li><strong>Product:</strong> Free or $5 digital product (Nervous System Reset Ritual or Sensory Profile Quiz)</li>
+        <li><strong>Why:</strong> Gets people through checkout, trains the pixel on buyers, establishes the OT credibility</li>
+        <li><strong>Ad format:</strong> Caitlin explaining one tip from the guide, then "Download the full guide"</li>
+        <li><strong>Targeting:</strong> Retarget waitlist + website visitors, cold targeting to anxiety/ADHD interests</li>
+      </ul>
+    </div>
+
+    <h3>Phase 3: Drop campaigns ($50-100/day, drop weeks only)</h3>
+    <div class="phase-card">
+      <h4>Objective: Ring sales during drops</h4>
+      <ul class="check">
+        <li><strong>Platform:</strong> Meta + TikTok + Google Shopping</li>
+        <li><strong>Budget:</strong> Spike during drop week only - don't burn money between drops</li>
+        <li><strong>Ad format:</strong> Product showcase video + Rachel wearing + urgency messaging</li>
+        <li><strong>Retargeting:</strong> Waitlist who haven't purchased, website visitors, video viewers, digital product buyers</li>
+        <li><strong>Cold:</strong> Best-performing organic content boosted as ads</li>
+        <li><strong>Urgency:</strong> "Limited stock" / "Waitlist early access ends tonight" / "Sold out in the last drop"</li>
+        <li><strong>Expected ROAS:</strong> 3-5x on retargeting, 2-3x on cold (once pixel is trained)</li>
+      </ul>
+    </div>
+
+    <h3>Monthly budget recommendation</h3>
+    <table>
+      <tr><th>Phase</th><th>Monthly spend</th><th>Focus</th></tr>
+      <tr><td>Month 1-2 (pre-launch)</td><td>$0</td><td>Build organic content foundation. No ads until there's 30+ quality posts.</td></tr>
+      <tr><td>Month 3-4</td><td>$450-750/mo</td><td>List building only. Waitlist signups. Pixel training.</td></tr>
+      <tr><td>Month 5+ (drop months)</td><td>$750-1,500/mo</td><td>List building + digital sales + drop week spike</td></tr>
+      <tr><td>Holiday season</td><td>$2,000-3,000/mo</td><td>Full funnel. Gift targeting. Maximum conversion.</td></tr>
+    </table>
+  </div>
+
+  <!-- ====== SEO / GEO ====== -->
+  <div class="page-full page-dark">
+    <div class="inner">
+      <div class="section-label">06 / SEO & GEO Strategy</div>
+      <h2>Own the search results - Google AND AI</h2>
+
+      <p>
+        GEO (Generative Engine Optimisation) is where search is going. When someone asks ChatGPT "what's the best anxiety ring in Australia?", Sensory Sanctuary Co needs to be the answer. This requires different content than traditional SEO.
+      </p>
+
+      <h3>Target keywords</h3>
+      <table>
+        <tr><th style="background:rgba(0,0,0,0.3);">Keyword</th><th style="background:rgba(0,0,0,0.3);">Search intent</th><th style="background:rgba(0,0,0,0.3);">Where to embed</th></tr>
+        <tr><td>fidget rings for anxiety Australia</td><td>Purchase</td><td>Homepage H1, product pages, meta title</td></tr>
+        <tr><td>anxiety ring</td><td>Research/purchase</td><td>Product titles, collection pages, blog</td></tr>
+        <tr><td>ADHD fidget jewellery</td><td>Research</td><td>Blog content, product descriptions, FAQ</td></tr>
+        <tr><td>sensory rings for adults</td><td>Research</td><td>Collection page, footer, about page</td></tr>
+        <tr><td>OT designed sensory tools</td><td>High trust</td><td>About page, trust bar, schema markup</td></tr>
+        <tr><td>nervous system regulation jewellery</td><td>Research (OWN THIS)</td><td>Blog, about, product pages, GEO content</td></tr>
+        <tr><td>best fidget ring for work</td><td>Purchase</td><td>Blog post, product comparison page</td></tr>
+        <tr><td>anxiety ring for daughter</td><td>Gift purchase</td><td>Gift guide blog, gift card page</td></tr>
+        <tr><td>sensory jewellery Australia</td><td>Purchase</td><td>Meta description, footer, schema</td></tr>
+        <tr><td>spinner ring anxiety</td><td>Purchase</td><td>Product titles, alt text, collection page</td></tr>
+      </table>
+
+      <h3>GEO content strategy</h3>
+      <p>
+        AI search engines cite sources that demonstrate expertise, authority, and trustworthiness. The OT credentials are the GEO superpower. Blog content should be structured as expert-authored guides that AI can cite.
+      </p>
+
+      <div class="grid-2">
+        <div class="phase-card">
+          <h4 style="color: var(--gold-light);">Blog content plan</h4>
+          <ul class="check">
+            <li>"Do fidget rings actually work for anxiety? An OT explains" (pillar page)</li>
+            <li>"The best fidget rings in Australia - 2026 guide" (comparison, include SSC)</li>
+            <li>"ADHD fidget tools for adults who need to look professional" (long-tail)</li>
+            <li>"Nervous system regulation: what it means and why your ring helps" (education)</li>
+            <li>"How to choose a sensory ring for your needs" (buyer's guide)</li>
+            <li>"Sensory processing in adults: signs you might benefit from tactile tools" (awareness)</li>
+          </ul>
+        </div>
+        <div class="phase-card">
+          <h4 style="color: var(--gold-light);">GEO signals to embed</h4>
+          <ul class="check">
+            <li>Author schema markup (Caitlin - Occupational Therapist)</li>
+            <li>FAQ schema on every product page</li>
+            <li>Product schema with reviews</li>
+            <li>"Sources" and clinical references in blog content</li>
+            <li>Expert quotes from Caitlin throughout the site</li>
+            <li>Brand mentioned naturally in long-form content (AI picks up entity mentions)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== 90-DAY PLAN ====== -->
+  <div class="page">
+    <div class="section-label">07 / 90-Day Launch Plan</div>
+    <h2>From now to first drop</h2>
+
+    <h3>Month 1: Foundation</h3>
+    <div class="phase-card">
+      <h4>Brand + website + content foundation</h4>
+      <ul class="check">
+        <li>Finalise brand guide, voice, and positioning</li>
+        <li>Rebuild website with repositioned messaging and GEO</li>
+        <li>Rachel photo shoot (natural light, candid, wearing rings in real settings)</li>
+        <li>Set up fresh Instagram brand account</li>
+        <li>Set up TikTok business account</li>
+        <li>Create 20+ pieces of content (bank for first 2 weeks of posting)</li>
+        <li>Set up email capture (waitlist landing page)</li>
+        <li>Set up Klaviyo/Mailchimp with welcome sequence</li>
+        <li>Write product descriptions with new positioning</li>
+      </ul>
+    </div>
+
+    <h3>Month 2: Build the audience</h3>
+    <div class="phase-card">
+      <h4>Content + community + list growth</h4>
+      <ul class="check">
+        <li>Post 3-5x/week on TikTok, 3-4x/week on Instagram</li>
+        <li>Rachel to camera minimum 2x/week</li>
+        <li>Daily stories (behind the scenes, process, personal)</li>
+        <li>Engage with ADHD/anxiety/neurodivergent community (comment, duet, stitch)</li>
+        <li>Start list building ads ($15-25/day) - waitlist capture</li>
+        <li>Push free digital product to list (Nervous System Reset Ritual)</li>
+        <li>Collect and feature early customer reviews</li>
+        <li>Begin teasing "the first drop" in week 3-4</li>
+      </ul>
+    </div>
+
+    <h3>Month 3: The first drop</h3>
+    <div class="phase-card">
+      <h4>Launch the drop model</h4>
+      <ul class="check">
+        <li>Week 1-2: Tease content (behind the scenes, Rachel designing, Caitlin explaining)</li>
+        <li>Week 2: Reveal the collection, open waitlist for early access</li>
+        <li>Week 3: Warm the list (email sequence, digital product gift, social proof)</li>
+        <li>Week 4: DROP. Waitlist gets 24-hour early access. Then public. Countdown content. Rachel goes live.</li>
+        <li>Spike ad spend during drop week ($50-100/day)</li>
+        <li>Post-drop: customer unboxing content, review collection, "sold out" energy</li>
+        <li>Begin teasing Drop 2</li>
+      </ul>
+    </div>
+
+    <h3>Key metrics to track</h3>
+    <table>
+      <tr><th>Metric</th><th>Month 1 target</th><th>Month 3 target</th></tr>
+      <tr><td>Email list size</td><td>100</td><td>500-1,000</td></tr>
+      <tr><td>Instagram followers (new account)</td><td>200-500</td><td>1,000-2,500</td></tr>
+      <tr><td>TikTok followers</td><td>500-1,000</td><td>3,000-5,000</td></tr>
+      <tr><td>Digital products sold</td><td>10-20</td><td>50-100</td></tr>
+      <tr><td>Ring sales (Drop 1)</td><td>-</td><td>50-100 units</td></tr>
+      <tr><td>Average order value</td><td>-</td><td>$60-80 (bundle strategy)</td></tr>
+      <tr><td>Email open rate</td><td>40%+</td><td>35%+</td></tr>
+    </table>
+  </div>
+
+  <!-- ====== NDIS + GROWTH ====== -->
+  <div class="page-full page-charcoal">
+    <div class="inner">
+      <div class="section-label">08 / Growth Levers</div>
+      <h2>Beyond the first drop</h2>
+
+      <h3>NDIS eligibility</h3>
+      <div class="highlight">
+        <p><strong>Kaiko Fidgets is NDIS-claimable and it transformed their business.</strong> If Sensory Sanctuary Co's products can be classified under NDIS Consumables or Assistive Technology, this opens a government-funded sales channel. With two OTs as founders, the clinical justification writes itself. Worth investigating with an NDIS provider consultant.</p>
+      </div>
+
+      <h3>Wholesale / B2B</h3>
+      <ul class="check">
+        <li>OT clinics and practices - sell as recommended tools for clients</li>
+        <li>Psychology and counselling practices</li>
+        <li>Corporate wellness programs</li>
+        <li>School and university wellbeing officers</li>
+        <li>Sensory specialist retailers (Sensory Assist, The Sensory Specialist)</li>
+      </ul>
+
+      <h3>Bundle strategy for AOV growth</h3>
+      <table>
+        <tr><th style="background:rgba(0,0,0,0.3);">Bundle</th><th style="background:rgba(0,0,0,0.3);">Contents</th><th style="background:rgba(0,0,0,0.3);">Price</th></tr>
+        <tr><td>The Starter</td><td>1 ring + Nervous System Reset Ritual (digital)</td><td>$44.95</td></tr>
+        <tr><td>The Pair</td><td>2 rings (e.g. Dawn + Dusk)</td><td>$79.95</td></tr>
+        <tr><td>The Full Toolkit</td><td>1 ring + 1 necklace + 30-Day Journal (digital)</td><td>$89.95</td></tr>
+        <tr><td>The Gift Set</td><td>1 ring + gift card + handwritten note card</td><td>$59.95</td></tr>
+        <tr><td>The Regulation Kit</td><td>1 ring + all 4 digital products</td><td>$69.95</td></tr>
+      </table>
+
+      <h3>Referral program</h3>
+      <p>
+        "Give $10, get $10." Simple referral mechanic. When a customer shares their unique link and someone buys, both get $10 off. Works because this product naturally comes up in conversation - "Where did you get that ring?"
+      </p>
+
+      <h3>Collaborations</h3>
+      <ul class="check">
+        <li>ADHD/anxiety influencers and advocates (micro-influencers, 5K-50K followers)</li>
+        <li>OT accounts on Instagram/TikTok (clinical endorsement)</li>
+        <li>Mental health awareness campaigns (R U OK? Day, Mental Health Month)</li>
+        <li>Female founders networks (Rachel's model + entrepreneur angle)</li>
+        <li>Neurodivergent podcasts and publications</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <div style="background: var(--charcoal); padding: 3rem; text-align: center; border-top: 2px solid var(--gold);">
+    <p style="font-family: 'Pinyon Script', cursive; font-size: 2rem; color: var(--gold-light);">Build the audience. Sell the knowledge. Drop the jewellery.</p>
+    <p style="font-size: 0.75rem; color: rgba(245,240,232,0.4); margin-top: 1.5rem; letter-spacing: 0.15em; text-transform: uppercase;">Sensory Sanctuary Co - Marketing Strategy v1.0</p>
+    <p style="font-size: 0.7rem; color: rgba(245,240,232,0.3); margin-top: 0.5rem;">Prepared by Kelly Wotherspoon - AI with Soul - May 2026</p>
+  </div>
+
+</body>
+</html>

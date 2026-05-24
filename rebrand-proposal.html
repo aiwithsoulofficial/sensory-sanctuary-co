@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensory Sanctuary Co - Brand Repositioning Proposal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --sage: #3A5A40;
+      --sage-mid: #588157;
+      --sage-light: #8B9D83;
+      --gold: #C5A46B;
+      --gold-light: #D4BC8A;
+      --cream: #F5F0E8;
+      --cream-warm: #FAF6F0;
+      --charcoal: #2A2A2A;
+      --text: #444;
+      --white: #FFFFFF;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    /* ====== COVER PAGE ====== */
+    .cover-page {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--sage) 0%, #2D4A35 60%, #1D3A25 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(197, 164, 107, 0.12) 0%, transparent 70%);
+    }
+
+    .cover-page * { position: relative; z-index: 1; }
+
+    .cover-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .cover-page h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      max-width: 700px;
+    }
+
+    .cover-page h1 em { color: var(--gold-light); }
+
+    .cover-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 2rem auto;
+    }
+
+    .cover-meta {
+      color: rgba(245, 240, 232, 0.6);
+      font-size: 0.85rem;
+    }
+
+    .cover-meta strong { color: var(--cream); }
+
+    .cover-logo {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+
+    .cover-logo img {
+      height: 35px;
+      width: auto;
+      filter: brightness(2);
+    }
+
+    .cover-badge {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      text-align: right;
+    }
+
+    .cover-badge p {
+      font-size: 0.65rem;
+      color: rgba(245, 240, 232, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* ====== PAGE STYLES ====== */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+    }
+
+    .page-dark {
+      background: var(--sage);
+      color: var(--cream);
+      max-width: 100%;
+      padding: 5rem;
+    }
+
+    .page-dark .inner { max-width: 900px; margin: 0 auto; }
+
+    .section-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+    }
+
+    .page h2 {
+      font-size: 2rem;
+      color: var(--sage);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-dark h2 { color: var(--cream); }
+
+    .page h3 {
+      font-size: 1.3rem;
+      color: var(--sage);
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .page-dark h3 { color: var(--gold-light); }
+
+    .page p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .page-dark p { color: rgba(245, 240, 232, 0.8); }
+
+    .lead {
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 2rem;
+    }
+
+    .page-dark .lead { color: var(--cream); }
+
+    /* ====== HIGHLIGHT BOX ====== */
+    .highlight {
+      background: var(--white);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .page-dark .highlight {
+      background: rgba(0, 0, 0, 0.2);
+      border-left-color: var(--gold);
+    }
+
+    .highlight p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .highlight strong { color: var(--sage); }
+    .page-dark .highlight strong { color: var(--gold); }
+
+    /* ====== TABLE ====== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.85rem;
+    }
+
+    th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      background: var(--sage);
+      color: var(--cream);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #E8E2D8;
+      color: var(--text);
+    }
+
+    tr:nth-child(even) td { background: var(--cream-warm); }
+
+    .page-dark th { background: rgba(0, 0, 0, 0.3); }
+    .page-dark td {
+      border-bottom-color: rgba(245, 240, 232, 0.1);
+      color: rgba(245, 240, 232, 0.8);
+    }
+    .page-dark tr:nth-child(even) td { background: rgba(0, 0, 0, 0.1); }
+
+    /* ====== STATS GRID ====== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: 4px;
+    }
+
+    .page-dark .stat { background: rgba(0, 0, 0, 0.2); }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--sage);
+      font-weight: 300;
+    }
+
+    .page-dark .stat-number { color: var(--gold); }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--sage-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.25rem;
+    }
+
+    .page-dark .stat-label { color: rgba(245, 240, 232, 0.5); }
+
+    /* ====== CHECKLIST ====== */
+    ul.checklist {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.checklist li {
+      padding: 0.6rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.9rem;
+      color: var(--text);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .page-dark ul.checklist li {
+      color: rgba(245, 240, 232, 0.8);
+      border-bottom-color: rgba(245, 240, 232, 0.08);
+    }
+
+    ul.checklist li::before {
+      content: '\\2713';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    /* ====== PRICING ====== */
+    .pricing-card {
+      background: var(--white);
+      border: 2px solid var(--sage);
+      border-radius: 4px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .page-dark .pricing-card {
+      background: rgba(0, 0, 0, 0.2);
+      border-color: var(--gold);
+    }
+
+    .pricing-card .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: var(--sage);
+      margin: 1rem 0;
+    }
+
+    .page-dark .pricing-card .price { color: var(--gold); }
+
+    .pricing-card .price-sub {
+      font-size: 0.8rem;
+      color: var(--sage-light);
+    }
+
+    .pricing-tier {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ====== DIVIDER ====== */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 3rem 0;
+    }
+
+    /* ====== FOOTER ====== */
+    .proposal-footer {
+      background: var(--charcoal);
+      padding: 3rem;
+      text-align: center;
+      color: rgba(245, 240, 232, 0.5);
+      font-size: 0.8rem;
+    }
+
+    .proposal-footer strong { color: var(--cream); }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .page { padding: 3rem 1.5rem; }
+      .page-dark { padding: 3rem 1.5rem; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .cover-page { page-break-after: always; }
+      .page, .page-dark { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== COVER PAGE ====== -->
+  <div class="cover-page">
+    <div class="cover-logo">
+      <img src="https://sensorysanctuaryco.com.au/cdn/shop/files/Sensory_2.png?v=1774498800&width=300" alt="Sensory Sanctuary Co">
+    </div>
+
+    <div class="cover-eyebrow">Brand Repositioning Proposal</div>
+    <h1>From jewellery store to <em>sensory regulation brand</em></h1>
+    <div class="cover-divider"></div>
+    <div class="cover-meta">
+      <p>Prepared for <strong>Rachel & Caitlin</strong></p>
+      <p>By <strong>Kelly Wotherspoon</strong> - AI with Soul</p>
+      <p style="margin-top: 1rem; font-size: 0.75rem;">May 2026</p>
+    </div>
+
+    <div class="cover-badge">
+      <p>Confidential</p>
+    </div>
+  </div>
+
+  <!-- ====== THE OPPORTUNITY ====== -->
+  <div class="page">
+    <div class="section-number">01</div>
+    <h2>The opportunity you're sitting on</h2>
+
+    <p class="lead">
+      Sensory Sanctuary Co has something that almost no competitor in Australia has: two Occupational Therapists as founders, a model with lived anxiety as the face of the brand, and a product line that genuinely works. What's missing isn't the product - it's the positioning.
+    </p>
+
+    <p>
+      Right now, the website reads like a beautiful jewellery store. The problem? You're not selling jewellery. You're selling nervous system regulation tools that happen to look like jewellery. That distinction is everything - and it's nowhere on the site.
+    </p>
+
+    <div class="highlight">
+      <p><strong>The core issue:</strong> The words anxiety, ADHD, sensory processing, and neurodivergent don't appear on your homepage. Your biggest competitor - Worry Rings - says "manage your anxiety before you burn out" right in their hero. Your OT credentials are buried on an about page. Rachel's story isn't told at all. The people who need your product can't find it because you're not speaking their language.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-number">$9B</div>
+        <div class="stat-label">Global fidget market 2025</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">$17.6B</div>
+        <div class="stat-label">Projected by 2034</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">30M+</div>
+        <div class="stat-label">TikTok views on #anxietyring</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== THE COMPETITIVE LANDSCAPE ====== -->
+  <div class="page-dark">
+    <div class="inner">
+      <div class="section-number">02</div>
+      <h2>Where you sit in the market</h2>
+
+      <p class="lead">
+        We researched the top 7 competitors globally. Here's the landscape - and where the white space is.
+      </p>
+
+      <table>
+        <tr>
+          <th>Brand</th>
+          <th>Country</th>
+          <th>IG Followers</th>
+          <th>What they do well</th>
+        </tr>
+        <tr>
+          <td><strong>Worry Rings</strong></td>
+          <td>Australia</td>
+          <td>124K</td>
+          <td>TikTok growth engine, "wellness jewellery" positioning, 60K+ orders</td>
+        </tr>
+        <tr>
+          <td><strong>CONQUERing</strong></td>
+          <td>USA</td>
+          <td>56K</td>
+          <td>Inc. 5000, 175K customers, UNC study proving rings reduce anxiety</td>
+        </tr>
+        <tr>
+          <td><strong>Calm Collective</strong></td>
+          <td>UK</td>
+          <td>41K</td>
+          <td>"Jewellery That Moves With You" - elegant tagline, design-first</td>
+        </tr>
+        <tr>
+          <td><strong>Kaiko Fidgets</strong></td>
+          <td>Australia</td>
+          <td>20K</td>
+          <td>NDIS-claimable, autistic teen founder, 1,153% revenue growth</td>
+        </tr>
+        <tr>
+          <td><strong>Hey Luna</strong></td>
+          <td>Australia</td>
+          <td>4.8K</td>
+          <td>"Create your own kind of calm" - female founder, moon branding</td>
+        </tr>
+        <tr>
+          <td><strong>Subtly Anxious</strong></td>
+          <td>Australia</td>
+          <td>1.9K</td>
+          <td>Sterling silver only, Australian-designed, no founder face</td>
+        </tr>
+        <tr>
+          <td><strong>Stimm Jewelry</strong></td>
+          <td>USA</td>
+          <td>151</td>
+          <td>4 sensory modalities, great positioning - but no face = no growth</td>
+        </tr>
+      </table>
+
+      <h3>The pattern that predicts growth</h3>
+      <p>
+        Across every competitor, the same pattern holds: <em>founder story + face of brand = growth</em>. Worry Rings (124K followers) has Maddyson front and centre. CONQUERing (175K customers) has Tammy's mother-son story. Stimm Jewelry has the best clinical positioning in the market - and 151 followers. Because nobody knows who's behind it.
+      </p>
+
+      <div class="highlight">
+        <p><strong>Rachel is the unlock.</strong> A model who lives with anxiety, co-designing regulation tools with an OT? That's not a brand story - that's a movement. It's more authentic than any competitor in the space. But right now, nobody knows she exists.</p>
+      </div>
+
+      <h3>The positioning nobody owns</h3>
+      <p>
+        Every competitor says "anxiety relief" or "stress management." Not one uses <em>nervous system regulation</em>, <em>co-regulation</em>, or <em>sensory processing</em> language in their hero messaging. That's your lane. You're not selling anxiety rings - you're selling nervous system tools designed by the clinicians who understand them.
+      </p>
+    </div>
+  </div>
+
+  <!-- ====== THE VISION ====== -->
+  <div class="page">
+    <div class="section-number">03</div>
+    <h2>The repositioned brand</h2>
+
+    <p class="lead">
+      We're not starting from scratch. The products are beautiful, the clinical credibility is real, and the founder story is unmatched. What we're doing is making sure the world can actually see it.
+    </p>
+
+    <h3>New positioning statement</h3>
+    <div class="highlight">
+      <p><strong>"The only sensory jewellery in Australia designed by registered Occupational Therapists. Discreet fidget rings and regulation tools for adults with anxiety, ADHD, and sensory processing needs - designed to be beautiful enough that nobody knows it's therapy."</strong></p>
+    </div>
+
+    <h3>What changes</h3>
+
+    <table>
+      <tr>
+        <th>Element</th>
+        <th>Current</th>
+        <th>Repositioned</th>
+      </tr>
+      <tr>
+        <td>Hero messaging</td>
+        <td>"A Gentle Sanctuary, Wherever You Go"</td>
+        <td>"The fidget ring your nervous system has been asking for"</td>
+      </tr>
+      <tr>
+        <td>Target audience</td>
+        <td>Undefined</td>
+        <td>Adults with anxiety, ADHD, autism, SPD, overwhelm</td>
+      </tr>
+      <tr>
+        <td>Brand credibility</td>
+        <td>Hidden on about page</td>
+        <td>OT credentials in hero, trust bar, every product page</td>
+      </tr>
+      <tr>
+        <td>Face of brand</td>
+        <td>None</td>
+        <td>Rachel - model with anxiety, wearing the product</td>
+      </tr>
+      <tr>
+        <td>Product descriptions</td>
+        <td>"Sensory-inspired lifestyle piece"</td>
+        <td>"Spinner ring for the woman who masks her overwhelm"</td>
+      </tr>
+      <tr>
+        <td>SEO/GEO</td>
+        <td>None</td>
+        <td>Optimised for "fidget rings anxiety," "ADHD jewellery," "sensory rings Australia"</td>
+      </tr>
+      <tr>
+        <td>Digital products</td>
+        <td>"The Wellness Edit" (vague)</td>
+        <td>Named tools: Co-Regulation Guide, Nervous System Reset, Workplace Regulation</td>
+      </tr>
+      <tr>
+        <td>Social media</td>
+        <td>Beautiful videos, no context</td>
+        <td>8-pillar content strategy with branded reel covers</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ====== SCOPE OF WORK ====== -->
+  <div class="page-dark">
+    <div class="inner">
+      <div class="section-number">04</div>
+      <h2>What we build together</h2>
+
+      <h3>Phase 1: Brand repositioning & website</h3>
+      <ul class="checklist">
+        <li>Complete brand positioning strategy - ICP definition, messaging framework, competitor differentiation</li>
+        <li>New website design and build - repositioned homepage, product pages, founder story, science section</li>
+        <li>GEO/SEO optimisation - AI search keywords, schema markup, meta tags, alt text strategy</li>
+        <li>Product descriptions rewrite - every ring and necklace described by function, not just aesthetics</li>
+        <li>Digital product positioning - clear descriptions showing who each guide is for and what's inside</li>
+        <li>Rachel's brand story - written, positioned, and featured prominently throughout the site</li>
+        <li>Mobile-first responsive design with premium aesthetic</li>
+      </ul>
+
+      <h3>Phase 2: Social media brand system</h3>
+      <ul class="checklist">
+        <li>8-pillar content strategy mapped to buyer journey</li>
+        <li>Branded Instagram reel cover templates (8 categories)</li>
+        <li>Content direction guide - what Rachel films, how Caitlin contributes, posting cadence</li>
+        <li>Social media account strategy - separate brand account vs. personal</li>
+        <li>TikTok-first content plan (this is where the market is growing fastest)</li>
+        <li>Hashtag strategy and community engagement playbook</li>
+      </ul>
+
+      <h3>Phase 3: Growth foundations</h3>
+      <ul class="checklist">
+        <li>Email/SMS capture setup with welcome sequence</li>
+        <li>Review collection system (social proof is critical)</li>
+        <li>Bundle strategy for average order value growth</li>
+        <li>NDIS eligibility research (opens government-funded sales channel)</li>
+        <li>GEO strategy for AI search engines (ChatGPT, Perplexity, Claude) - this is where search is heading</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ====== INVESTMENT ====== -->
+  <div class="page">
+    <div class="section-number">05</div>
+    <h2>Investment</h2>
+
+    <p class="lead">
+      This isn't a website redesign. It's a brand repositioning that turns a product into a movement. Priced on scope and outcome, not hours.
+    </p>
+
+    <div class="pricing-card">
+      <div class="pricing-tier">Complete Brand Repositioning Package</div>
+      <div class="price">$4,500</div>
+      <div class="price-sub">AUD + GST</div>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text);">
+        Includes Phase 1 (website + positioning) and Phase 2 (social brand system).<br>
+        Phase 3 (growth foundations) included as strategic recommendations.
+      </p>
+    </div>
+
+    <h3>Payment structure</h3>
+    <table>
+      <tr>
+        <th>Milestone</th>
+        <th>Amount</th>
+        <th>When</th>
+      </tr>
+      <tr>
+        <td>Deposit (to commence)</td>
+        <td>$1,500</td>
+        <td>On agreement</td>
+      </tr>
+      <tr>
+        <td>Website delivery</td>
+        <td>$1,500</td>
+        <td>On Phase 1 completion</td>
+      </tr>
+      <tr>
+        <td>Final (social system)</td>
+        <td>$1,500</td>
+        <td>On Phase 2 completion</td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      <p><strong>Context:</strong> Worry Rings built a multi-seven-figure business in this exact market with strong positioning and a founder-led brand. The investment here is a fraction of what proper brand positioning costs at agency rates ($15-25K) - and it's the single highest-leverage thing you can do for this business right now.</p>
+    </div>
+
+    <h3>Optional ongoing support</h3>
+    <p>
+      After the repositioning is complete, ongoing monthly support is available for content strategy, social media management, email marketing, and GEO optimisation. We'll scope this together once the brand foundation is live.
+    </p>
+  </div>
+
+  <!-- ====== WHAT HAPPENS NEXT ====== -->
+  <div class="page-dark">
+    <div class="inner">
+      <div class="section-number">06</div>
+      <h2>What happens next</h2>
+
+      <p class="lead">
+        This is the starting point, not a prescription. Here's how we'd move forward together.
+      </p>
+
+      <table>
+        <tr>
+          <th>Step</th>
+          <th>What</th>
+          <th>Timeline</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Review this proposal together - discuss, adjust, align</td>
+          <td>This week</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Deposit and kick-off call - deep dive into Rachel's story, brand values, product details</td>
+          <td>Week 1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Rachel photo shoot direction - what we need, where, how (natural, candid, wearing the rings)</td>
+          <td>Week 1-2</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Website build and messaging - first draft for review</td>
+          <td>Week 2-3</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Website refinement and launch</td>
+          <td>Week 3-4</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Social brand system delivery - covers, content strategy, account setup</td>
+          <td>Week 4-5</td>
+        </tr>
+      </table>
+
+      <div class="highlight" style="margin-top: 2rem;">
+        <p><strong>One thing to decide first:</strong> The Instagram account. If the current @sensorysanctuaryco was converted from Rachel's personal account, the follower base won't match the brand content - and the algorithm will suppress reach. We may need a fresh brand account while keeping Rachel's personal as the face that drives people there. Let's discuss this in the kick-off.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <div class="proposal-footer">
+    <p><strong>Kelly Wotherspoon</strong> - AI with Soul</p>
+    <p style="margin-top: 0.5rem;">Brand strategy, AI systems, and digital transformation for businesses that are ready to grow.</p>
+    <p style="margin-top: 1.5rem; font-size: 0.7rem;">This proposal is confidential and prepared exclusively for Sensory Sanctuary Co. Valid for 30 days from issue date.</p>
+  </div>
+
+</body>
+</html>

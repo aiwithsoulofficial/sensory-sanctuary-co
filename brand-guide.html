@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensory Sanctuary Co - Brand Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Italiana&family=Outfit:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --forest: #2D4A35;
+      --sage: #3A5A40;
+      --sage-mid: #588157;
+      --sage-light: #8B9D83;
+      --sage-pale: #C8D5BB;
+      --gold: #C5A46B;
+      --gold-light: #D4BC8A;
+      --gold-pale: #E8D5B5;
+      --cream: #F5F0E8;
+      --cream-warm: #FAF6F0;
+      --blush: #E8D5CB;
+      --charcoal: #2A2A2A;
+      --text: #444;
+      --white: #FFFFFF;
+    }
+
+    html { font-size: 15px; }
+
+    body {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      color: var(--charcoal);
+      background: var(--cream-warm);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Italiana', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .script {
+      font-family: 'Pinyon Script', cursive;
+      font-weight: 400;
+    }
+
+    .serif { font-family: 'Libre Baskerville', Georgia, serif; }
+
+    /* ====== COVER ====== */
+    .cover {
+      min-height: 100vh;
+      background: var(--sage);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 40%, rgba(197, 164, 107, 0.12) 0%, transparent 60%);
+    }
+
+    .cover * { position: relative; z-index: 1; }
+
+    .cover-script {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 4.5rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .cover h1 {
+      font-size: 1rem;
+      color: var(--cream);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .cover-line {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 3rem;
+    }
+
+    .cover-meta {
+      font-size: 0.75rem;
+      color: rgba(245, 240, 232, 0.5);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ====== PAGE ====== */
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+    }
+
+    .page-full {
+      max-width: 100%;
+      padding: 5rem;
+    }
+
+    .page-dark {
+      background: var(--sage);
+      color: var(--cream);
+    }
+
+    .page-charcoal {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .inner { max-width: 1000px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .page h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-dark h2 { color: var(--cream); }
+
+    .page h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .page p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+      max-width: 700px;
+    }
+
+    .page-dark p { color: rgba(245, 240, 232, 0.8); }
+
+    /* ====== COLOUR SWATCHES ====== */
+    .colour-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .swatch {
+      text-align: center;
+    }
+
+    .swatch-colour {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      margin-bottom: 0.75rem;
+      border: 3px solid var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .swatch-name {
+      font-family: 'Italiana', serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      margin-bottom: 0.15rem;
+    }
+
+    .swatch-hex {
+      font-size: 0.7rem;
+      color: var(--sage-light);
+      letter-spacing: 0.05em;
+    }
+
+    .page-dark .swatch-name { color: var(--cream); }
+    .page-dark .swatch-hex { color: rgba(245, 240, 232, 0.5); }
+
+    /* ====== FONT SHOWCASE ====== */
+    .font-showcase {
+      margin: 2rem 0;
+      padding: 2.5rem;
+      background: var(--white);
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .page-dark .font-showcase {
+      background: rgba(0, 0, 0, 0.2);
+      border-color: rgba(245, 240, 232, 0.08);
+    }
+
+    .font-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .font-sample-script {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 3.5rem;
+      color: var(--sage);
+      line-height: 1.3;
+    }
+
+    .font-sample-display {
+      font-family: 'Italiana', serif;
+      font-size: 2.5rem;
+      color: var(--sage);
+      line-height: 1.3;
+    }
+
+    .font-sample-serif {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .font-sample-body {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .page-dark .font-sample-script { color: var(--gold-light); }
+    .page-dark .font-sample-display { color: var(--cream); }
+    .page-dark .font-sample-serif { color: rgba(245, 240, 232, 0.8); }
+    .page-dark .font-sample-body { color: rgba(245, 240, 232, 0.7); }
+
+    .font-meta {
+      margin-top: 0.75rem;
+      font-size: 0.7rem;
+      color: var(--sage-light);
+    }
+
+    /* ====== VOICE ====== */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .voice-card {
+      padding: 1.75rem;
+      border-radius: 6px;
+    }
+
+    .voice-yes {
+      background: var(--white);
+      border: 1px solid var(--sage-pale);
+    }
+
+    .voice-no {
+      background: var(--cream);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .voice-card h4 {
+      font-family: 'Italiana', serif;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .voice-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .voice-card li {
+      font-size: 0.85rem;
+      padding: 0.4rem 0;
+      color: var(--text);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .page-dark .voice-yes {
+      background: rgba(0, 0, 0, 0.2);
+      border-color: rgba(197, 164, 107, 0.3);
+    }
+
+    .page-dark .voice-no {
+      background: rgba(0, 0, 0, 0.1);
+      border-color: rgba(245, 240, 232, 0.08);
+    }
+
+    .page-dark .voice-card li { color: rgba(245, 240, 232, 0.7); border-bottom-color: rgba(245, 240, 232, 0.06); }
+
+    /* ====== LANGUAGE SWAP TABLE ====== */
+    .swap-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.85rem;
+    }
+
+    .swap-table th {
+      text-align: left;
+      padding: 0.75rem 1rem;
+      background: var(--sage);
+      color: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .swap-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .swap-table .dont { color: #C0392B; text-decoration: line-through; opacity: 0.7; }
+    .swap-table .do { color: var(--sage); font-weight: 500; }
+
+    /* ====== POSITIONING ====== */
+    .position-statement {
+      padding: 3rem;
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      margin: 2rem 0;
+    }
+
+    .page-dark .position-statement {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .position-statement p {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--sage);
+      line-height: 1.7;
+      max-width: 100%;
+    }
+
+    .page-dark .position-statement p { color: var(--cream); }
+
+    /* ====== ICP CARDS ====== */
+    .icp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .icp-card {
+      padding: 2rem;
+      background: var(--white);
+      border-radius: 6px;
+      border-top: 3px solid var(--gold);
+    }
+
+    .page-dark .icp-card { background: rgba(0, 0, 0, 0.2); }
+
+    .icp-card h4 {
+      font-family: 'Italiana', serif;
+      font-size: 1.1rem;
+      color: var(--sage);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-dark .icp-card h4 { color: var(--gold-light); }
+
+    .icp-card p {
+      font-size: 0.85rem;
+      max-width: 100%;
+    }
+
+    .icp-card .icp-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ====== IMAGERY DIRECTION ====== */
+    .imagery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .imagery-card {
+      aspect-ratio: 3/4;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .imagery-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .imagery-overlay {
+      position: relative;
+      z-index: 1;
+      background: rgba(42, 42, 42, 0.7);
+      backdrop-filter: blur(4px);
+      padding: 0.75rem;
+      border-radius: 4px;
+    }
+
+    .imagery-overlay p {
+      font-size: 0.7rem;
+      color: var(--cream);
+      margin: 0;
+      max-width: 100%;
+    }
+
+    /* ====== DO / DON'T ====== */
+    .dodont-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .dodont h4 {
+      font-family: 'Italiana', serif;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid;
+    }
+
+    .do-col h4 { border-color: var(--sage); color: var(--sage); }
+    .dont-col h4 { border-color: #C0392B; color: #C0392B; }
+
+    .dodont ul { list-style: none; padding: 0; }
+
+    .dodont li {
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+      color: var(--text);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .page-dark .dodont li { color: rgba(245, 240, 232, 0.7); border-bottom-color: rgba(245, 240, 232, 0.06); }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .colour-grid { grid-template-columns: repeat(3, 1fr); }
+      .voice-grid, .dodont-grid { grid-template-columns: 1fr; }
+      .icp-grid { grid-template-columns: 1fr; }
+      .imagery-grid { grid-template-columns: repeat(2, 1fr); }
+      .page { padding: 3rem 1.5rem; }
+      .page-full { padding: 3rem 1.5rem; }
+    }
+
+    @media print {
+      .cover { page-break-after: always; }
+      .page, .page-full { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== COVER ====== -->
+  <div class="cover">
+    <div class="cover-script">Sensory Sanctuary</div>
+    <h1>Brand Guide</h1>
+    <div class="cover-line"></div>
+    <div class="cover-meta">
+      <p>Version 1.0 - May 2026</p>
+      <p style="margin-top: 0.5rem;">Prepared by Kelly Wotherspoon - AI with Soul</p>
+    </div>
+  </div>
+
+  <!-- ====== BRAND ESSENCE ====== -->
+  <div class="page">
+    <div class="section-label">01 / Brand Essence</div>
+    <h2>Who we are</h2>
+
+    <p>
+      Sensory Sanctuary Co is an Australian sensory jewellery brand founded by two Occupational Therapists - Rachel and Caitlin. We design feminine, elegant fidget rings, spinner necklaces, and digital nervous system regulation tools for adults with anxiety, ADHD, autism, and sensory processing needs.
+    </p>
+
+    <p>
+      Our pieces are genuinely beautiful - celestial spinners, zircon-accented bands, delicate gold and silver finishes. They're designed so nobody knows they're therapeutic tools unless you tell them. That's the point.
+    </p>
+
+    <div class="position-statement">
+      <p>
+        Sensory Sanctuary Co makes beautiful, feminine jewellery that quietly regulates your nervous system. Designed by Occupational Therapists for adults who need sensory support that doesn't look like it came from a therapy catalogue.
+      </p>
+    </div>
+
+    <h3>Brand pillars</h3>
+
+    <div class="icp-grid">
+      <div class="icp-card">
+        <div class="icp-label">Pillar 01</div>
+        <h4>Beauty first</h4>
+        <p>These are jewellery pieces first, regulation tools second. Every design is feminine, elegant, and something you'd choose to wear even without the therapeutic benefit.</p>
+      </div>
+      <div class="icp-card">
+        <div class="icp-label">Pillar 02</div>
+        <h4>OT credibility</h4>
+        <p>Every product is informed by occupational therapy principles for sensory processing and nervous system regulation. We don't just sell - we educate.</p>
+      </div>
+      <div class="icp-card">
+        <div class="icp-label">Pillar 03</div>
+        <h4>Lived experience</h4>
+        <p>Rachel lives with anxiety. She's not just the co-founder - she's the first customer. This brand exists because she couldn't find what she needed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== COLOUR PALETTE ====== -->
+  <div class="page-full page-dark">
+    <div class="inner">
+      <div class="section-label">02 / Colour Palette</div>
+      <h2>Colours</h2>
+      <p>Grounded in nature. Sage and forest tones anchor the brand in calm. Gold brings warmth and femininity. Cream and blush keep everything soft and approachable.</p>
+
+      <h3>Primary palette</h3>
+      <div class="colour-grid">
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #3A5A40;"></div>
+          <div class="swatch-name">Sanctuary Sage</div>
+          <div class="swatch-hex">#3A5A40</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #C5A46B;"></div>
+          <div class="swatch-name">Warm Gold</div>
+          <div class="swatch-hex">#C5A46B</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #F5F0E8;"></div>
+          <div class="swatch-name">Soft Cream</div>
+          <div class="swatch-hex">#F5F0E8</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #2A2A2A;"></div>
+          <div class="swatch-name">Charcoal</div>
+          <div class="swatch-hex">#2A2A2A</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #FFFFFF; border-color: #E8E2D8;"></div>
+          <div class="swatch-name">White</div>
+          <div class="swatch-hex">#FFFFFF</div>
+        </div>
+      </div>
+
+      <h3>Supporting palette</h3>
+      <div class="colour-grid">
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #2D4A35;"></div>
+          <div class="swatch-name">Deep Forest</div>
+          <div class="swatch-hex">#2D4A35</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #588157;"></div>
+          <div class="swatch-name">Mid Sage</div>
+          <div class="swatch-hex">#588157</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #8B9D83;"></div>
+          <div class="swatch-name">Light Sage</div>
+          <div class="swatch-hex">#8B9D83</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #D4BC8A;"></div>
+          <div class="swatch-name">Light Gold</div>
+          <div class="swatch-hex">#D4BC8A</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-colour" style="background: #E8D5CB;"></div>
+          <div class="swatch-name">Blush</div>
+          <div class="swatch-hex">#E8D5CB</div>
+        </div>
+      </div>
+
+      <h3>Colour usage rules</h3>
+      <div class="dodont-grid">
+        <div class="dodont do-col">
+          <h4 style="color: var(--gold-light); border-color: var(--gold);">Always</h4>
+          <ul>
+            <li>Sanctuary Sage as the primary brand colour - headers, buttons, backgrounds</li>
+            <li>Warm Gold for accents, highlights, and the script font</li>
+            <li>Soft Cream as the default page background</li>
+            <li>Charcoal for body text (never pure black)</li>
+            <li>Blush sparingly for warmth in feminine-forward content</li>
+          </ul>
+        </div>
+        <div class="dodont dont-col">
+          <h4 style="color: #E74C3C; border-color: #E74C3C;">Never</h4>
+          <ul>
+            <li>Pure black (#000000) anywhere - too harsh, use Charcoal</li>
+            <li>Neon or bright colours - this brand is soft, grounded, natural</li>
+            <li>More than 3 colours in a single graphic</li>
+            <li>Gold on gold or sage on sage - always ensure contrast</li>
+            <li>Clinical blue or medical white - we're not a pharmacy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== TYPOGRAPHY ====== -->
+  <div class="page">
+    <div class="section-label">03 / Typography</div>
+    <h2>Fonts</h2>
+    <p>Four fonts. Each has a role. The script brings femininity and luxury. The display brings editorial elegance. The serif adds warmth to longer text. The sans-serif keeps everything clean.</p>
+
+    <div class="font-showcase">
+      <div class="font-label">Script / Accent - Pinyon Script</div>
+      <div class="font-sample-script">Sensory Sanctuary Co</div>
+      <div class="font-meta">Use for: Logo lockup, hero accent text, section highlights, pull quotes. Never use for body copy or paragraphs. Minimum size: 24px.</div>
+    </div>
+
+    <div class="font-showcase">
+      <div class="font-label">Display / Headings - Italiana</div>
+      <div class="font-sample-display">Beautiful jewellery that quietly regulates your nervous system</div>
+      <div class="font-meta">Use for: Page headings, section titles, product names, navigation. Thin weight - never bold. Always elegant, never shouty.</div>
+    </div>
+
+    <div class="font-showcase">
+      <div class="font-label">Serif / Quotes & Features - Libre Baskerville Italic</div>
+      <div class="font-sample-serif">"Designed by OTs who got tired of handing clients tools they'd never use in public."</div>
+      <div class="font-meta">Use for: Pull quotes, testimonials, founder story, italic accent text, product taglines. Adds warmth and editorial feel.</div>
+    </div>
+
+    <div class="font-showcase">
+      <div class="font-label">Body / UI - Outfit</div>
+      <div class="font-sample-body">Every ring features an intentional tactile mechanism - spinning, rotating, or interlocking bands - informed by occupational therapy principles for nervous system regulation. These are feminine, elegant pieces designed to look like the jewellery you'd choose anyway.</div>
+      <div class="font-meta">Use for: Body text, product descriptions, navigation, buttons, captions, metadata. Weights: Light (300), Regular (400), Medium (500), Semi-bold (600).</div>
+    </div>
+
+    <h3>Hierarchy example</h3>
+    <div class="font-showcase" style="text-align: center; padding: 3rem;">
+      <div style="font-family: 'Pinyon Script', cursive; font-size: 2.5rem; color: var(--gold); margin-bottom: 0.25rem;">The Collection</div>
+      <div style="font-family: 'Italiana', serif; font-size: 1.8rem; color: var(--sage); margin-bottom: 1rem;">Feminine sensory rings you'd wear even without the anxiety</div>
+      <div style="font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 0.95rem; color: var(--text); margin-bottom: 1rem;">"The ring nobody knows is keeping me calm."</div>
+      <div style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; color: var(--sage-light);">SHOP NOW - FROM $34.95 AUD</div>
+    </div>
+  </div>
+
+  <!-- ====== BRAND VOICE ====== -->
+  <div class="page-full page-dark">
+    <div class="inner">
+      <div class="section-label">04 / Brand Voice</div>
+      <h2>How we sound</h2>
+      <p>Warm, knowing, validating, direct. We speak to women who are already overwhelmed - our job is to make their nervous system relax, not give them more to process.</p>
+
+      <h3>Voice spectrum</h3>
+      <div class="voice-grid">
+        <div class="voice-card voice-yes">
+          <h4 style="color: var(--sage);">&#10003; We are</h4>
+          <ul>
+            <li><strong>Warm</strong> - like a friend who gets it, not a brand selling at you</li>
+            <li><strong>Knowing</strong> - we understand the mask, the overwhelm, the secret fidgeting</li>
+            <li><strong>Direct</strong> - we say anxiety, ADHD, sensory processing. We don't hide behind "wellness"</li>
+            <li><strong>Beautiful</strong> - our words feel as considered as our designs</li>
+            <li><strong>Grounded</strong> - clinical credibility expressed with softness</li>
+            <li><strong>Normalising</strong> - you're not broken, you're overstimulated</li>
+          </ul>
+        </div>
+        <div class="voice-card voice-no">
+          <h4 style="color: #C0392B;">&#10007; We are not</h4>
+          <ul>
+            <li><strong>Clinical</strong> - no medical jargon, no white-coat energy</li>
+            <li><strong>Vague</strong> - no "calm vibes" or "gentle sanctuary" without context</li>
+            <li><strong>Cutesy</strong> - not infantilising. These are adult women.</li>
+            <li><strong>Corporate</strong> - no brand-speak, no "leveraging synergies"</li>
+            <li><strong>Preachy</strong> - no toxic positivity, no "just breathe"</li>
+            <li><strong>Dramatic</strong> - no catastrophising, no fear-based marketing</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Language swaps</h3>
+      <p>Specific words carry positioning. These swaps ensure every piece of copy reinforces who we are.</p>
+
+      <table class="swap-table">
+        <tr>
+          <th style="background: rgba(0,0,0,0.3);">Don't say</th>
+          <th style="background: rgba(0,0,0,0.3);">Say instead</th>
+          <th style="background: rgba(0,0,0,0.3);">Why</th>
+        </tr>
+        <tr>
+          <td class="dont">stress relief</td>
+          <td class="do" style="color: var(--gold);">nervous system regulation</td>
+          <td style="color: rgba(245,240,232,0.6);">We own regulation language - nobody else does</td>
+        </tr>
+        <tr>
+          <td class="dont">wellness jewellery</td>
+          <td class="do" style="color: var(--gold);">sensory jewellery / regulation tools</td>
+          <td style="color: rgba(245,240,232,0.6);">"Wellness" is saturated. Sensory is specific.</td>
+        </tr>
+        <tr>
+          <td class="dont">fidget toy</td>
+          <td class="do" style="color: var(--gold);">sensory ring / fidget ring</td>
+          <td style="color: rgba(245,240,232,0.6);">"Toy" sounds childish. Ring sounds premium.</td>
+        </tr>
+        <tr>
+          <td class="dont">calming</td>
+          <td class="do" style="color: var(--gold);">grounding / regulating</td>
+          <td style="color: rgba(245,240,232,0.6);">Calming is passive. Regulating is active.</td>
+        </tr>
+        <tr>
+          <td class="dont">inspired by therapy</td>
+          <td class="do" style="color: var(--gold);">designed by Occupational Therapists</td>
+          <td style="color: rgba(245,240,232,0.6);">Specific credentials, not vague inspiration</td>
+        </tr>
+        <tr>
+          <td class="dont">for everyone</td>
+          <td class="do" style="color: var(--gold);">for adults with anxiety, ADHD, and sensory needs</td>
+          <td style="color: rgba(245,240,232,0.6);">When you speak to everyone, you reach nobody</td>
+        </tr>
+        <tr>
+          <td class="dont">subtle / discreet (as main message)</td>
+          <td class="do" style="color: var(--gold);">beautiful first, therapeutic second</td>
+          <td style="color: rgba(245,240,232,0.6);">Lead with beauty, not with hiding</td>
+        </tr>
+        <tr>
+          <td class="dont">self-care</td>
+          <td class="do" style="color: var(--gold);">self-regulation</td>
+          <td style="color: rgba(245,240,232,0.6);">Self-care is a bath bomb. Self-regulation is a skill.</td>
+        </tr>
+      </table>
+
+      <h3>Tagline options</h3>
+      <div style="padding: 2rem; background: rgba(0,0,0,0.2); border-radius: 6px; margin: 1.5rem 0;">
+        <p style="font-family: 'Pinyon Script', cursive; font-size: 2rem; color: var(--gold-light); margin-bottom: 1rem; max-width: 100%;">Beautiful jewellery. Quiet regulation.</p>
+        <p style="font-family: 'Italiana', serif; font-size: 1.3rem; color: var(--cream); margin-bottom: 1.5rem; max-width: 100%;">Alternatives:</p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="color: rgba(245,240,232,0.8); padding: 0.4rem 0; border-bottom: 1px solid rgba(245,240,232,0.06); font-style: italic;">"Jewellery your nervous system chose for you."</li>
+          <li style="color: rgba(245,240,232,0.8); padding: 0.4rem 0; border-bottom: 1px solid rgba(245,240,232,0.06); font-style: italic;">"Designed by OTs. Worn by women who look fine."</li>
+          <li style="color: rgba(245,240,232,0.8); padding: 0.4rem 0; border-bottom: 1px solid rgba(245,240,232,0.06); font-style: italic;">"The ring you reach for when everything is too much."</li>
+          <li style="color: rgba(245,240,232,0.8); padding: 0.4rem 0; font-style: italic;">"Regulate in secret. Shine in public."</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== IDEAL CUSTOMER ====== -->
+  <div class="page">
+    <div class="section-label">05 / Ideal Customer</div>
+    <h2>Who we're talking to</h2>
+    <p>We have three core customer profiles. Every piece of content, every product description, every ad should speak to one of these women.</p>
+
+    <div class="icp-grid">
+      <div class="icp-card">
+        <div class="icp-label">Primary</div>
+        <h4>The masking professional</h4>
+        <p>25-45. Corporate or client-facing role. Has anxiety or ADHD (diagnosed or suspected). Picks her nails, bounces her leg, clicks pens. Needs something beautiful and invisible. Wants to regulate without anyone noticing.</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--gold);"><strong>She searches for:</strong> anxiety ring, fidget ring for work, ADHD jewellery, discreet fidget ring</p>
+      </div>
+      <div class="icp-card">
+        <div class="icp-label">Secondary</div>
+        <h4>The overwhelmed mum</h4>
+        <p>28-45. Running on adrenaline. Kids, school, activities, sensory overload everywhere. Possibly neurodivergent herself, possibly has a neurodivergent child. Needs grounding in the chaos. Buys for herself AND as gifts for her daughter.</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--gold);"><strong>She searches for:</strong> anxiety ring for daughter, sensory gifts, nervous system support, mum burnout</p>
+      </div>
+      <div class="icp-card">
+        <div class="icp-label">Tertiary</div>
+        <h4>The gift-giver</h4>
+        <p>Any age. Looking for a meaningful gift for someone who struggles with anxiety, sensory processing, or overwhelm. Wants something that says "I see you" without being patronising. The OT design story gives her confidence it's not just a pretty ring.</p>
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: var(--gold);"><strong>She searches for:</strong> anxiety gift, gift for anxious friend, sensory jewellery gift, meaningful gift for her</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== IMAGERY DIRECTION ====== -->
+  <div class="page-full page-charcoal">
+    <div class="inner">
+      <div class="section-label">06 / Photography & Imagery</div>
+      <h2>Visual direction</h2>
+      <p>The imagery should feel like a luxury fashion editorial crossed with real life. Beautiful but accessible. Styled but not staged. Rachel is the face - and she should look like herself, not a catalogue model.</p>
+
+      <h3>Photography style</h3>
+      <div class="imagery-grid">
+        <div class="imagery-card" style="background: linear-gradient(180deg, var(--cream) 0%, var(--blush) 100%);">
+          <div class="imagery-overlay">
+            <p><strong>Product close-ups</strong><br>Soft natural light. Macro details on the ring mechanisms. Show the spin, the texture, the sparkle. Cream/sage backgrounds.</p>
+          </div>
+        </div>
+        <div class="imagery-card" style="background: linear-gradient(180deg, var(--sage-light) 0%, var(--sage) 100%);">
+          <div class="imagery-overlay">
+            <p><strong>Rachel wearing</strong><br>Natural light, candid energy. Wearing the ring at a cafe, in a meeting, at the beach. Beautiful but real. Not posed.</p>
+          </div>
+        </div>
+        <div class="imagery-card" style="background: linear-gradient(180deg, var(--gold-pale) 0%, var(--gold) 100%);">
+          <div class="imagery-overlay">
+            <p><strong>Hands & detail</strong><br>Close-ups of hands wearing the rings in real settings. Coffee cup, keyboard, steering wheel. Show the ring IN LIFE.</p>
+          </div>
+        </div>
+        <div class="imagery-card" style="background: linear-gradient(180deg, var(--cream) 0%, var(--sage-pale) 100%);">
+          <div class="imagery-overlay">
+            <p><strong>Flat lays & lifestyle</strong><br>Ring on a journal, next to a cup of tea, on a marble tray. Feminine, curated, aspirational but warm.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>Photography rules</h3>
+      <div class="dodont-grid">
+        <div class="dodont do-col">
+          <h4 style="color: var(--gold-light); border-color: var(--gold);">Always</h4>
+          <ul>
+            <li style="color: rgba(245,240,232,0.7);">Natural light - golden hour, soft window light, outdoor shade</li>
+            <li style="color: rgba(245,240,232,0.7);">Warm tones - cream, sage, blush, gold in backgrounds</li>
+            <li style="color: rgba(245,240,232,0.7);">Show real skin, real hands, real settings</li>
+            <li style="color: rgba(245,240,232,0.7);">Rachel's face in at least 30% of all content</li>
+            <li style="color: rgba(245,240,232,0.7);">Show the ring being USED (spinning, touching) not just worn</li>
+          </ul>
+        </div>
+        <div class="dodont dont-col">
+          <h4 style="color: #E74C3C; border-color: #E74C3C;">Never</h4>
+          <ul>
+            <li style="color: rgba(245,240,232,0.7);">Flash photography or harsh studio lighting</li>
+            <li style="color: rgba(245,240,232,0.7);">Stock photos of any kind - only Rachel, Caitlin, and real customers</li>
+            <li style="color: rgba(245,240,232,0.7);">Clinical or medical settings</li>
+            <li style="color: rgba(245,240,232,0.7);">Faceless product shots only - people sell, not things</li>
+            <li style="color: rgba(245,240,232,0.7);">Over-filtered or heavily edited skin</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Rachel as face of brand</h3>
+      <div class="position-statement" style="border-left-color: var(--gold);">
+        <p style="color: var(--cream);">
+          Rachel is the brand. Her face, her story, her anxiety - that's what makes this different from every other fidget ring on the internet. She's a model who lives with anxiety, co-designing regulation tools with an OT. People need to see her, hear her, know her. Every scroll of the Instagram grid should show a woman they want to be - beautiful, honest, and unapologetically managing her nervous system.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SOCIAL MEDIA ====== -->
+  <div class="page">
+    <div class="section-label">07 / Social Media</div>
+    <h2>Content pillars & grid</h2>
+    <p>Eight content pillars. Rotate through them for a balanced grid. Every reel gets a branded cover from one of these categories.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0;">
+      <div style="padding: 1.25rem; background: var(--sage); border-radius: 6px; text-align: center;">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 1.5rem; color: var(--gold-light);">01</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.9rem; color: var(--cream); margin-top: 0.25rem;">Founder Story</div>
+        <div style="font-size: 0.65rem; color: rgba(245,240,232,0.5); margin-top: 0.5rem;">Rachel's life, anxiety, behind the scenes</div>
+      </div>
+      <div style="padding: 1.25rem; background: var(--white); border-radius: 6px; text-align: center; border: 1px solid var(--sage-pale);">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 1.5rem; color: var(--gold);">02</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.9rem; color: var(--sage); margin-top: 0.25rem;">How It Works</div>
+        <div style="font-size: 0.65rem; color: var(--sage-light); margin-top: 0.5rem;">Ring close-ups, ASMR, the spin</div>
+      </div>
+      <div style="padding: 1.25rem; background: var(--charcoal); border-radius: 6px; text-align: center;">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 1.5rem; color: var(--gold-light);">03</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.9rem; color: var(--cream); margin-top: 0.25rem;">Who It's For</div>
+        <div style="font-size: 0.65rem; color: rgba(245,240,232,0.5); margin-top: 0.5rem;">"This ring is for the woman who..."</div>
+      </div>
+      <div style="padding: 1.25rem; background: var(--sage); border-radius: 6px; text-align: center;">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 1.5rem; color: var(--gold-light);">04</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.9rem; color: var(--cream); margin-top: 0.25rem;">The Science</div>
+        <div style="font-size: 0.65rem; color: rgba(245,240,232,0.5); margin-top: 0.5rem;">Nervous system education</div>
+      </div>
+      <div style="padding: 1.25rem; background: var(--white); border-radius: 6px; text-align: center; border: 1px solid var(--sage-pale);">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 1.5rem; color: var(--gold);">05</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.9rem; color: var(--sage); margin-top: 0.25rem;">Customer Story</div>
+        <div style="font-size: 0.65rem; color: var(--sage-light); margin-top: 0.5rem;">Testimonials, DMs, before/after</div>
+      </div>
+      <div style="padding: 1.25rem; background: var(--charcoal); border-radius: 6px; text-align: center;">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 1.5rem; color: var(--gold-light);">06</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.9rem; color: var(--cream); margin-top: 0.25rem;">Product Feature</div>
+        <div style="font-size: 0.65rem; color: rgba(245,240,232,0.5); margin-top: 0.5rem;">New drops, restocks, comparisons</div>
+      </div>
+      <div style="padding: 1.25rem; background: var(--sage); border-radius: 6px; text-align: center;">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 1.5rem; color: var(--gold-light);">07</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.9rem; color: var(--cream); margin-top: 0.25rem;">OT Explains</div>
+        <div style="font-size: 0.65rem; color: rgba(245,240,232,0.5); margin-top: 0.5rem;">Caitlin's clinical insights</div>
+      </div>
+      <div style="padding: 1.25rem; background: var(--white); border-radius: 6px; text-align: center; border: 1px solid var(--sage-pale);">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 1.5rem; color: var(--gold);">08</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.9rem; color: var(--sage); margin-top: 0.25rem;">Regulation Tip</div>
+        <div style="font-size: 0.65rem; color: var(--sage-light); margin-top: 0.5rem;">Quick wins, sensory hacks</div>
+      </div>
+    </div>
+
+    <h3>Instagram account strategy</h3>
+    <div class="position-statement">
+      <p style="font-size: 1rem;">
+        If Rachel converted her personal account to @sensorysanctuaryco, the existing followers were never there for sensory jewellery. The algorithm sees the content pivot, engagement drops, reach tanks. <strong>Recommendation:</strong> Create a fresh @sensorysanctuaryco brand account. Rachel's personal stays personal but becomes the engine - tagging the brand, wearing the product, telling her story. Personal drives traffic. Brand converts sales.
+      </p>
+    </div>
+  </div>
+
+  <!-- ====== LOGO USAGE ====== -->
+  <div class="page-full page-dark">
+    <div class="inner">
+      <div class="section-label">08 / Logo & Usage</div>
+      <h2>Logo guidelines</h2>
+      <p>The existing logo works for now. Future refinement should incorporate the Pinyon Script for a more premium lockup.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 2rem 0;">
+        <div style="background: var(--cream); padding: 3rem; border-radius: 6px; text-align: center;">
+          <img src="https://sensorysanctuaryco.com.au/cdn/shop/files/Sensory_2.png?v=1774498800&width=400" alt="Logo on cream" style="max-width: 200px; margin: 0 auto;">
+          <p style="margin-top: 1rem; font-size: 0.7rem; color: var(--sage-light);">On cream / light backgrounds</p>
+        </div>
+        <div style="background: var(--sage); padding: 3rem; border-radius: 6px; text-align: center;">
+          <img src="https://sensorysanctuaryco.com.au/cdn/shop/files/Sensory_2.png?v=1774498800&width=400" alt="Logo on sage" style="max-width: 200px; margin: 0 auto; filter: brightness(2);">
+          <p style="margin-top: 1rem; font-size: 0.7rem; color: rgba(245,240,232,0.5);">On sage / dark backgrounds (inverted)</p>
+        </div>
+        <div style="background: var(--charcoal); padding: 3rem; border-radius: 6px; text-align: center;">
+          <img src="https://sensorysanctuaryco.com.au/cdn/shop/files/Sensory_2.png?v=1774498800&width=400" alt="Logo on charcoal" style="max-width: 200px; margin: 0 auto; filter: brightness(2);">
+          <p style="margin-top: 1rem; font-size: 0.7rem; color: rgba(245,240,232,0.5);">On charcoal / dark backgrounds (inverted)</p>
+        </div>
+      </div>
+
+      <h3>Future logo direction</h3>
+      <div style="background: rgba(0,0,0,0.2); padding: 3rem; border-radius: 6px; text-align: center; margin: 1.5rem 0;">
+        <div style="font-family: 'Pinyon Script', cursive; font-size: 3rem; color: var(--gold-light);">Sensory Sanctuary</div>
+        <div style="font-family: 'Italiana', serif; font-size: 0.8rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(245,240,232,0.6); margin-top: 0.25rem;">C O</div>
+        <p style="margin-top: 1.5rem; font-size: 0.75rem; color: rgba(245,240,232,0.4);">Proposed script lockup - more feminine, more premium, more aligned with the rebrand</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== FOOTER ====== -->
+  <div style="background: var(--charcoal); padding: 3rem; text-align: center;">
+    <p style="font-family: 'Pinyon Script', cursive; font-size: 2rem; color: var(--gold-light); margin-bottom: 0.5rem;">Sensory Sanctuary Co</p>
+    <p style="font-size: 0.75rem; color: rgba(245,240,232,0.4); letter-spacing: 0.15em; text-transform: uppercase;">Brand Guide v1.0 - May 2026</p>
+    <p style="font-size: 0.7rem; color: rgba(245,240,232,0.3); margin-top: 1rem;">Prepared by Kelly Wotherspoon - AI with Soul</p>
+  </div>
+
+</body>
+</html>
